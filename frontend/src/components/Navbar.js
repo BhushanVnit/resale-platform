@@ -1,21 +1,21 @@
 import { Link } from "react-router-dom";
-import {  useRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { loggedIn } from "../recoil_state";
 
 const Header = () => {
   const [isValidToken, setValidToken] = useRecoilState(loggedIn);
-  
+
   const logout = () => {
     localStorage.removeItem("token");
     setValidToken(false);
   };
-  
+
   return (
     <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
       {/* ==== LOGO or Brand Name ==== */}
       <div className="flex items-center flex-shrink-0 text-white mr-20">
         <span className="font-semibold text-3xl tracking-tight">
-          <Link to="/">Resell</Link>
+          <Link to="/">Resale</Link>
         </span>
       </div>
       {/* ==== Navbar Menu ==== */}
